@@ -1,5 +1,14 @@
-# 🏗 Scaffold-ETH 2
-
+# 🏗 Web3NZ Scaffold-ETH 2
+## 👀 Quick NZ Workshop Documentation
+- Please follow standard Scaffold ETH setup on [Quick Start section](#quickstart).
+- NZDD Sepolia Contract Address: `0xe91d143072fc5e92e6445f18aa35dbd43597340c`
+- NZDD Mainnet Contract Address: `0x2dd087589ce9c5b2d1b42e20d2519b3c8cf022b7`
+- Openzeppelin ERC20 Docs: https://docs.openzeppelin.com/contracts/2.x/api/token/erc20
+- Get information about chain ids: https://chainlist.org/
+- Find the getAbi.ts script [here](packages/hardhat/scripts/getAbi.ts)
+  <br>
+  <br>
+---
 <h4 align="center">
   <a href="https://docs.scaffoldeth.io">Documentation</a> |
   <a href="https://scaffoldeth.io">Website</a>

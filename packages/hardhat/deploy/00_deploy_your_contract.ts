@@ -24,8 +24,10 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
 
   await deploy("YourContract", {
     from: deployer,
-    // Contract constructor arguments
-    args: [deployer],
+    // Contract constructor arguments:
+    //! NOTE: Change deployer to your address so it becomes the owner in the contract
+    // ! NOTE: change the address to your erc20
+    args: [deployer, "0xE91d143072fc5e92e6445f18aa35DBd43597340c"],
     log: true,
     // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
     // automatically mining the contract deployment transaction. There is no effect on live networks.
