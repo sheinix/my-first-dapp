@@ -48,7 +48,7 @@ contract YourContract {
         _;
     }
 
-    modifier onlyBeneficiary() {
+    modifier isBeneficiary() {
         // msg.sender: predefined variable that represents address of the account that called the current function
         require(msg.sender == beneficiary, "Not the Beneficiary");
         _;
@@ -61,6 +61,18 @@ contract YourContract {
      */
     function setBeneficiary(address _beneficiary) public isOwner {
         beneficiary = _beneficiary;
+    }
+
+    /**
+     * @dev Returns the address of the beneficiary.
+     * @return The address of the beneficiary.
+     */
+    function getBeneficiary() public view returns (address) {
+        return beneficiary;
+    }
+
+    function getContractAddress() public view returns (address) {
+        return address(this);
     }
 
     /**
@@ -106,9 +118,9 @@ contract YourContract {
 
     /**
      * Function that allows the owner to withdraw all the Ether in the contract
-     * The function can only be called by the beneficiary of the contract as defined by the onlyBeneficiary modifier
+     * The function can only be called by the beneficiary of the contract as defined by the isBeneficiary modifier
      */
-    function withdraw() public onlyBeneficiary {
+    function withdraw() public isBeneficiary {
         (bool success, ) = beneficiary.call{ value: address(this).balance }("");
         require(success, "Failed to send Ether");
     }
@@ -118,7 +130,7 @@ contract YourContract {
      * @notice Only the beneficiary can call this function to withdraw NZDD tokens.
      * @param amount The amount of NZDD tokens to withdraw.
      */
-    function withdrawNZDD(uint256 amount) public onlyBeneficiary {
+    function withdrawNZDD(uint256 amount) public isBeneficiary {
         require(amount > 0, "amount must be greater than 0");
 
         uint256 contractBalance = nzddToken.balanceOf(address(this));
