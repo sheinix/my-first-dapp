@@ -151,6 +151,15 @@ To host your frontend application, you'll need a Vercel account linked with your
    This command will automatically build and deploy your Next.js application to Vercel.
 
 
+## Interacting with external smart contracts
+
+- NZDD Sepolia Contract Address: `0xe91d143072fc5e92e6445f18aa35dbd43597340c`
+- NZDD Mainnet Contract Address: `0x2dd087589ce9c5b2d1b42e20d2519b3c8cf022b7`
+- Openzeppelin ERC20 Docs: https://docs.openzeppelin.com/contracts/2.x/api/token/erc20
+- Get information about chain ids: https://chainlist.org/
+- Find the getAbi.ts script [here](packages/hardhat/scripts/getAbi.ts)
+
+
 ## Conclusion
 
 By completing this workshop, you have:
@@ -159,5 +168,7 @@ By completing this workshop, you have:
 - Developed and deployed a smart contract with beneficiary and withdrawal functionality.
 - Built a React-based frontend to interact with your smart contract.
 - Deployed your dApp to a live network using a generated deployer account, and hosted your frontend on Vercel with a single command.
+- Interacted with external contracts deployed on the blockchain.
+- Interacted with NZDD on your own smart contract.
 
 Feel free to ask questions or reach out for help during the workshop. Enjoy your blockchain journey and happy building!
