@@ -9,6 +9,7 @@ import { Toaster } from "react-hot-toast";
 import { WagmiProvider } from "wagmi";
 import { Footer } from "~~/components/Footer";
 import { Header } from "~~/components/Header";
+import { Sidebar } from "~~/components/Sidebar";
 import { BlockieAvatar } from "~~/components/scaffold-eth";
 import { useInitializeNativeCurrencyPrice } from "~~/hooks/scaffold-eth";
 import { wagmiConfig } from "~~/services/web3/wagmiConfig";
@@ -18,10 +19,16 @@ const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <div className={`flex flex-col min-h-screen `}>
-        <Header />
-        <main className="relative flex flex-col flex-1">{children}</main>
-        <Footer />
+      <div className="flex min-h-screen">
+        {/* Sidebar on the left */}
+        <Sidebar />
+
+        {/* Main content (Header + children + Footer) */}
+        <div className="flex flex-col flex-1">
+          <Header />
+          <main className="flex-1 p-4">{children}</main>
+          <Footer />
+        </div>
       </div>
       <Toaster />
     </>
