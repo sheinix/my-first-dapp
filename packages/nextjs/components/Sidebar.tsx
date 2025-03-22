@@ -7,18 +7,28 @@ export const Sidebar = () => {
       <ul className="space-y-4 text-white">
         <li>
           <Link href="/" className="hover:underline">
-            Home
+            Dashboard
           </Link>
         </li>
         <li>
           <Link href="/about" className="hover:underline">
-            About
+            Transactions
           </Link>
         </li>
         <li>
           <Link href="/dashboard" className="hover:underline">
-            Dashboard
+            Billing
           </Link>
+          <li>
+            <Link href="/about" className="hover:underline">
+              Account
+            </Link>
+            <li>
+              <Link href="/about" className="hover:underline">
+                Log out
+              </Link>
+            </li>
+          </li>
         </li>
       </ul>
     </aside>
